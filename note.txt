@@ -1,0 +1,19 @@
+making a airbnb type of website.
+
+SETUP:
+
+1. npm init -y 
+2. npm i express
+3. npm i mongoose
+4. npm i ejs
+5. make a app.js file
+//setup all the requires and roots.
+
+creating Model
+Model:Listing(name) 
+.title ->(string)
+.description ->(string)
+.image -> (URL)
+.price -> (Number)
+.location ->(string)
+.country,state ->(string)
