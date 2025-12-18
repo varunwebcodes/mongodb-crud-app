@@ -2,20 +2,34 @@
 <body>
 
 <h3>All Listings</h3>
-<form action="/listings/new" method="GET">
+<!-- <form action="/listings/new" method="GET">
     <button>
     Create New Listing
     </button>   
-</form>
-<ul>
-    <% allListings.forEach(listing => { %>
-        <li>
-            <a href="/listings/<%= listing._id %>">
-                <%= listing.title %>
-            </a>
-        </li>
-    <% }) %>
-</ul>
+</form> -->
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 listings">
+  <% allListings.forEach(listing => { %>
+
+    <div class="col">
+      <div class="card listing-card h-100">
+        <a href="/listings/<%= listing._id %>" class="image-link">
+          <img src="<%= listing.image %>" class="card-img-top" alt="<%= listing.title %>">
+        </a>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= listing.title %></h5>
+          <p class="price">
+            ₹ <%= listing.price.toLocaleString("en-IN") %> / night
+          </p>
+        </div>
+      </div>
+    </div>
+
+  <% }) %>
+</div>
+
+
 
 </body>
 </html>

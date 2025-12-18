@@ -1,3 +1,109 @@
 body{
-    background-color: pink;
+    font-family: "Plus Jakarta Sans", sans-serif !important ;
+}
+.navbar{
+    height: 5rem;
+}
+.fa-compass{
+    color: rgba(251, 45, 45, 0.897);
+    font-size:2 rem ;
+}
+.nav-link{
+    font-size: 1.2rem;
+    color: #222222 !important;
+}
+.nav-link:hover{
+    color: rgba(251, 45, 45, 0.897) !important;
+}
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 25px 15px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-social {
+  margin-bottom: 15px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #ff9800;
+}
+
+.footer-copy {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff9800;
+}
+
+/* Listing Grid */
+.listings {
+  padding: 20px;
+}
+
+/* Card Styling */
+.listing-card {
+  border: none;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+/* Hover effect */
+.listing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.listing-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Remove link underline */
+.image-link {
+  text-decoration: none;
+}
+
+/* Card Body */
+.card-body {
+  padding: 14px;
+}
+
+/* Title */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+/* Price */
+.price {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
 }
