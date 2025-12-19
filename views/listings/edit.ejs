@@ -1,28 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust</title>
-</head>
+<% layout("/layouts/boilerplate.ejs") %>
 <body>
-    <h2>Edit Your Listing</h2>
-    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" >
-        <input type="text" name="listing[title]" value="<%= listing.title %>" >
-        <br><br>
-        <textarea type="text" name="listing[description]"><%= listing.description %></textarea>
-        <br><br>
-        <input type="text" name="listing[image]" value="<%= listing.image %>" >
-        <br><br>
-        <input type="text" name="listing[price]" value="<%= listing.price %>" >
-        <br><br>
-        <input type="text" name="listing[country]" value="<%= listing.country %>" >
-        <br><br>
-        <input type="text" name="listing[location]" value="<%= listing.location %>" >
-        <br><br>
-        <button>Add</button>
+    <div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+
+      <h2 class="mb-4 text-center">Edit Listing</h2>
+
+      <form
+        action="/listings/<%= listing._id %>?_method=PUT"
+        method="POST"
+        class="card p-4 shadow-sm border-0">
+
+        <!-- Title -->
+        <div class="mb-3">
+          <label class="form-label">Title</label>
+          <input
+            type="text"
+            name="listing[title]"
+            class="form-control"
+            value="<%= listing.title %>"
+            required
+          >
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label class="form-label">Description</label>
+          <textarea
+            name="listing[description]"
+            class="form-control"
+            rows="4"
+            required
+          ><%= listing.description %></textarea>
+        </div>
+
+        <!-- Image Preview -->
+        <div class="mb-3 text-center">
+            <img
+                id="imagePreview"
+                src="<%= listing.image %>"
+                alt="Listing Image"
+                class="img-fluid w-100 rounded shadow-sm mb-2"
+                style="max-height: 320px; object-fit: cover;"
+            >
+        </div>
+
+        <!-- Image URL -->
+        <div class="mb-3">
+            <label class="form-label">Image URL</label>
+                <input
+                type="url"
+                name="listing[image]"
+                class="form-control"
+                value="<%= listing.image %>"
+                oninput="updateImagePreview(this.value)"
+                >
+        </div>
 
 
-    </form>
+
+        <!-- Price & Country -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Price (₹ / night)</label>
+            <input
+              type="number"
+              name="listing[price]"
+              class="form-control"
+              value="<%= listing.price %>"
+              required
+            >
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Country</label>
+            <input
+              type="text"
+              name="listing[country]"
+              class="form-control"
+              value="<%= listing.country %>"
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-4">
+          <label class="form-label">Location</label>
+          <input
+            type="text"
+            name="listing[location]"
+            class="form-control"
+            value="<%= listing.location %>"
+            required
+          >
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button class="btn btn-success btn-lg">
+            Update Listing
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function updateImagePreview(url) {
+    const preview = document.getElementById("imagePreview");
+
+    if (url.trim() === "") {
+      preview.src = "https://via.placeholder.com/400x250?text=No+Image";
+    } else {
+      preview.src = url;
+    }
+  }
+</script>
+
 </body>
 </html>

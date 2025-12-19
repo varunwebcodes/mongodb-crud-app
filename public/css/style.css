@@ -3,6 +3,7 @@ body{
 }
 .navbar{
     height: 5rem;
+    z-index: 1050;
 }
 .fa-compass{
     color: rgba(251, 45, 45, 0.897);
@@ -98,12 +99,28 @@ body{
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #222;
+  color: #222 !important;
 }
 
 /* Price */
 .price {
   font-size: 0.95rem;
   font-weight: 500;
-  color: #555;
+  color: #555 ;
+}
+
+#imagePreview {
+  transition: transform 0.3s ease;
+}
+
+#imagePreview:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.02);
 }
