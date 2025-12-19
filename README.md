@@ -87,7 +87,7 @@ DB-PROJECT/
 6. Open browser and visit:
 
    ```
-   http://localhost:3000
+   http://localhost:3000/listings
    ```
 
 ---
