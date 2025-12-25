@@ -8,10 +8,10 @@
     </button>   
 </form> -->
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 listings">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 listings mb-5">
   <% allListings.forEach(listing => { %>
 
-    <div class="col">
+    <div class="col mb-5">
       <div class="card listing-card h-100">
         <a href="/listings/<%= listing._id %>" class="image-link">
           <img src="<%= listing.image %>" class="card-img-top" alt="<%= listing.title %>">

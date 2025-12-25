@@ -9,7 +9,9 @@
       <form
         action="/listings/<%= listing._id %>?_method=PUT"
         method="POST"
-        class="card p-4 shadow-sm border-0">
+        class="card p-4 shadow-sm border-0 needs-validation"
+        novalidate
+        >
 
         <!-- Title -->
         <div class="mb-3">
@@ -21,6 +23,8 @@
             value="<%= listing.title %>"
             required
           >
+          <div class="valid-feedback">Title looks Good</div>
+          <div class="invalid-feedback">Please enter a title</div>
         </div>
 
         <!-- Description -->
@@ -32,6 +36,8 @@
             rows="4"
             required
           ><%= listing.description %></textarea>
+            <div class="invalid-feedback">Please enter a description</div>
+            <div class="valid-feedback">Description is valid</div>
         </div>
 
         <!-- Image Preview -->
@@ -42,7 +48,7 @@
                 alt="Listing Image"
                 class="img-fluid w-100 rounded shadow-sm mb-2"
                 style="max-height: 320px; object-fit: cover;"
-            >
+              >
         </div>
 
         <!-- Image URL -->
@@ -53,8 +59,11 @@
                 name="listing[image]"
                 class="form-control"
                 value="<%= listing.image %>"
+                required
                 oninput="updateImagePreview(this.value)"
                 >
+                <div class="invalid-feedback">Please enter a valid image URL</div>
+                <div class="valid-feedback">Image URL is valid</div>
         </div>
 
 
@@ -70,6 +79,8 @@
               value="<%= listing.price %>"
               required
             >
+            <div class="invalid-feedback">Price enter a valid price</div>
+            <div class="valid-feedback">Price is valid</div>
           </div>
 
           <div class="col-md-6">
@@ -81,6 +92,8 @@
               value="<%= listing.country %>"
               required
             >
+            <div class="invalid-feedback">Please enter a country</div>
+            <div class="valid-feedback">country is valid</div>
           </div>
         </div>
 
@@ -94,6 +107,8 @@
             value="<%= listing.location %>"
             required
           >
+          <div class="invalid-feedback">Please enter a location</div>
+          <div class="valid-feedback">location is valid</div>
         </div>
 
         <!-- Submit Button -->
@@ -121,5 +136,6 @@
   }
 </script>
 
+<script src="/js/script.js"></script>
 </body>
 </html>
